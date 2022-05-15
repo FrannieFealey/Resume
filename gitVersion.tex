@@ -1,0 +1,280 @@
+% FortySecondsCV LaTeX template
+% Copyright © 2019-2020 René Wirnata <rene.wirnata@pandascience.net>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Please visit https://github.com/PandaScience/FortySecondsCV for the most
+% recent version! For bugs or feature requests, please open a new issue on
+% github.
+%
+% Contributors
+% ------------
+% * ifokkema
+% * Bertbk
+% * Hespe
+%
+% Attributions
+% ------------
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo
+%   (cspagnuolo@unisa.it), released under the MIT license and available under
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% showframes,
+	% vline=2.2em,
+	% maincolor=cvgreen,
+	% sidecolor=gray!50,
+	% sectioncolor=red,
+	% subsectioncolor=orange,
+	% itemtextcolor=black!80,
+	% sidebarwidth=0.4\paperwidth,
+	% topbottommargin=0.03\paperheight,
+	% leftrightmargin=20pt,
+	% profilepicsize=4.5cm,
+	% profilepicborderwidth=3.5pt,
+	% profilepicstyle=profilecircle,
+	% profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+]{fortysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+\usepackage{enumitem}
+
+% uncomment in case you don't want any hyphenation
+ \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+%	\usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {maincolor!10, maincolor!40,
+	maincolor!20, maincolor!60, maincolor!35},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{ Francesca Fealey }
+% job title/career
+\cvjobtitle{Software Engineer}
+
+%% optional information
+% profile picture
+\cvprofilepic{frannie.jpg}
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+%\cvbirthday{\today}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{address}
+% phone number
+\cvphone{phoneNum}
+% personal website
+%\cvsite{https://pandascience.net}
+% email address
+\cvmail{email}
+
+\cvlinkedin{linkedin}
+
+
+% pgp key
+%\cvkey{4096R/FF00FF00}{0xAABBCCDDFF00FF00}
+% any other custom entry
+\cvgithub{https://github.com/FrannieFealey}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	\profilesection{Languages}
+		\pointskill{}{Python3}{4}
+    	\pointskill{}{PySpark}{4}
+    	\pointskill{}{SQL}{4}
+    	\pointskill{}{Agile Framework}{4}
+    	\pointskill{}{Git}{4}
+    	\pointskill{}{Java}{3}
+    	\pointskill{}{Command Line}{2}
+    	\pointskill{}{No-SQL}{2}
+    	\pointskill{}{HTML}{1}
+    	\pointskill{}{CSS}{1}
+    	\pointskill{}{JavaScript}{1}
+    	
+
+	\profilesection{IDE}
+		\skill{}{Eclipse}
+		\skill{}{Oracle}
+		\skill{}{Brackets}
+		\skill{}{Visual Studio Code}
+		\skill{}{Impala}
+		\skill{}{Tectia}
+		\skill{}{ArrangoDB}
+	}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 2nd PAGE
+%-------------------------------------------------------------------------------
+\addtobacksidebar{
+	\profilesection{About Me}
+	\aboutme{
+		The giant panda is a terrestrial animal and primarily spends its life
+		roaming and feeding in the bamboo forests of the Qinling Mountains and in
+		the hilly province of Sichuan.
+	}
+
+	\profilesection{Diagrams}
+	\begin{sidebarminipage}
+		\chartlabel{Bubble}
+		\chartlabel{Diagrams}
+		\chartlabel{with}
+		\chartlabel{proper}
+		\chartlabel{overflow}
+		\chartlabel{protection}
+		\chartlabel{for}
+		\chartlabel{labels}
+	\end{sidebarminipage}
+
+	\begin{figure}\centering
+		\smartdiagram[bubble diagram]{
+			\textcolor{white}{\textbf{Being a}} \\
+			\textcolor{white}{\textbf{Panda}}, % center bubble
+			\textcolor{black!90}{Eating},
+			\textcolor{black!90}{Sleeping},
+			\textcolor{black!90}{Rolling},
+			\textcolor{black!90}{Playing},
+			\textcolor{black!90}{Chilling}
+		}
+	\end{figure}
+
+	\chartlabel{Wheel Chart}
+
+	\wheelchart{3.7em}{2em}{%
+	20/3em/maincolor!50/Chill,
+	15/3em/maincolor!15/Play,
+	30/4em/maincolor!40/Sleep,
+	20/3em/maincolor!20/Eat
+	}
+
+	\profilesection{Barskills}
+	\barskill{\faSkyatlas}{Wearing asian rice hats}{60}
+	\barskill{\faImage}{Playing Chess}{30}
+	\barskill{\faMusic}{Playing the bamboo flute}{50}
+
+	\profilesection{Memberships}
+	\begin{memberships}
+		\membership[4em]{pics/logo.png}{PandaScience.net}
+		\membership[4em]{pics/logo.png}{Some longer text spanning over more than
+			only one line}
+	\end{memberships}
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{Education}
+\begin{cvtable}[1.5]
+	\cvitem{2017 -- 2021}{Siena College, \emph{Loudonville NY}}{}{\emph{Double Major} - Computer Science and Mathematics 
+	\newline \emph{Certificate} - Education 
+	\newline \textbf{}{GPA: } Computer Science - 3.82, Overall - 3.74
+	\newline \textbf{}{Honors: }Upsilon Pi Epsilon - Computer Science Honor Society  
+	\newline Pi Mu Epsilon - Math Honor Society 
+	}
+\end{cvtable}
+
+\cvsection{Experience}
+\begin{cvtable}[1.5]
+    \vspace{5mm}
+	\cvitem{2021 -- 2022}{\textbf{Data Engineer}}{Capgemini Financial Services}
+		{\vspace{-3mm}\begin{itemize}[noitemsep, topsep=0pt]
+		\item Created Pyspark scripts to check partition timing for querying data
+		\item Worked on translating 1-M, dimension, and measure data rules from Java to Pyspark
+		\item Helped mentor new contractors to gain familiarity with the structure and organization of both the framework and data flow
+		\end{itemize}}
+	
+	\vspace{5mm}
+	\cvitem{2020 -- 2021}{\textbf{Member of the Dev. Team}}{Siena College}
+		{\vspace{-3mm}\begin{itemize}[noitemsep, topsep=0pt]
+		\item Second iteration of Siena College's School of Science Augmented Reality Tour App
+		\item Created and implemented User Stories in order to create a functional run of the app
+		\item Quickly gained familiarity with Unity which past teams used on the app
+		\end{itemize}}
+	
+	\vspace{5mm}
+	\cvitem{2020 -- 2021}{\textbf{Student Teaching}}{Mohonasen High School}
+		{\vspace{-3mm}\begin{itemize}[noitemsep, topsep=0pt]
+		\item Created and developed unit plans for mathematics and CS classrooms
+		\item Instructed and mentored students through difficult topics in a hybrid learning environment
+		\item Responsible for testing and analyzing students' code in order to help them learn
+		\end{itemize}}
+		
+	\vspace{5mm}
+	\cvitem{2020 -- 2020}{\textbf{Student Research}}{Siena College}
+		{\vspace{-3mm}\begin{itemize}[noitemsep, topsep=0pt]
+		\item Created data manipulation and visualization lessons for teachers to use in a CS classroom
+		\item Gained a strong understanding of curriculum mapping to help revise a CS course outline
+		\item Developed curriculum and learning goals to align with state-wide standards for CS course
+		\end{itemize}}
+	
+	\vspace{5mm}
+	\cvitem{2019 -- 2019}{\textbf{Computer Science Dept. Teaching Assistant}}{Siena College}
+		{\vspace{-3mm}\begin{itemize}[noitemsep, topsep=0pt]
+		\item Assisted students with assignments in Python
+		\item Examined students' code to identify and resolve bugs
+		\item Fostered and inspired students' love of coding and knowledge of computer science
+		\end{itemize}}
+\end{cvtable}
+
+
+\cvsection{Extra-Curricular Activities}
+\begin{cvtable}
+	\cvitem{2017 - 2021}{Mentoring Program for Inner City Youth}{Siena College}{}
+	\cvitem{2017 - 2021}{Pep Band}{Siena College}{}
+\end{cvtable}
+
+
+
+\end{document}
