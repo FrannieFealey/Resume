@@ -76,7 +76,7 @@
 \newlength\leftrightmargin%
 \newlength\sidebartextwidth
 % default values
-\setlength{\sidebarwidth}{0.34\paperwidth}
+\setlength{\sidebarwidth}{0.35\paperwidth}
 \setlength{\topbottommargin}{0.05\paperheight}
 \setlength{\leftrightmargin}{0.03\paperwidth}
 % user overwrites
