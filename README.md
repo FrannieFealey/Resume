@@ -33,6 +33,7 @@ When you should use the FortySecondsCV class:
 
 ## Attributions
 
+* This Template was adapted from René Wirnata Forty Seconds CV on Overleaf
 * This LaTeX CV class is based on the style ideas of the
   [twentysecondscv class](https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex)
   by Carmine Spagnuolo
